@@ -1,0 +1,397 @@
+# College Club Website — Project Files
+
+This document contains all required files for the **Multi-Page College Club Website** assignment. Each file includes comments and explanations. Copy each code block into the appropriate file in your project folder.
+
+---
+
+## Folder structure (suggested)
+
+```
+college-club-website/
+├─ assets/
+│  ├─ images/
+│  │  └─ club-photo.jpg   <-- put a relevant image here (replace placeholder)
+├─ css/
+│  └─ styles.css
+├─ index.html
+├─ about.html
+├─ events.html
+├─ join.html
+└─ README.md
+```
+
+---
+
+## `index.html` (Home page)
+
+```html
+<!-- index.html
+     Home page for the College Club Website
+     Demonstrates semantic HTML, float layout usage and linked stylesheet
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Smart Minds Club - Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Common header / navigation (present on every page) -->
+  <header class="site-header">
+    <div class="logo">Smart Minds Club</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Welcome to Smart Minds Club</h1>
+      <p>We are a college club focused on developing problem-solving skills, organising events, and building projects together. Join our sessions, competitions and workshops to grow your skills and meet like-minded peers.</p>
+      <a class="btn" href="join.html">Join Now</a>
+    </div>
+    <div class="hero-right">
+      <!-- Float layout example: an image floated to the right inside the hero -->
+      <img src="assets/images/club-photo.jpg" alt="Club activity" class="hero-image">
+    </div>
+  </section>
+
+  <!-- Two-column feature section using floats (requirement: use float somewhere) -->
+  <section class="features">
+    <div class="feature-left">
+      <h2>Our Mission</h2>
+      <p>To encourage learning beyond the classroom through workshops, hackathons, and peer mentorship.</p>
+    </div>
+    <div class="feature-right">
+      <h2>What We Offer</h2>
+      <ul>
+        <li>Weekly workshops</li>
+        <li>Project collaboration</li>
+        <li>Events & Competitions</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Smart Minds Club — Built with HTML & CSS</p>
+  </footer>
+
+  <script>
+    // small script to set the current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
+
+---
+
+## `about.html` (About Club page)
+
+```html
+<!-- about.html
+     About Club page: includes a 4-5 line description and one relevant image
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About - Smart Minds Club</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Smart Minds Club</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>About Our Club</h1>
+    <p>
+      Smart Minds Club is a student-run organisation that aims to foster curiosity, creativity, and collaboration among college students.
+      We host weekly workshops on programming, electronics, and design. Members get the opportunity to work on real projects, attend speaker sessions,
+      and participate in inter-college competitions. Our community welcomes beginners and experienced students alike.
+    </p>
+
+    <!-- Relevant image -->
+    <figure class="about-figure">
+      <img src="assets/images/club-photo.jpg" alt="Students collaborating" class="about-image">
+      <figcaption>Club members collaborating during a workshop.</figcaption>
+    </figure>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year-about"></span> Smart Minds Club</p>
+  </footer>
+
+  <script>document.getElementById('year-about').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+```
+
+---
+
+## `events.html` (Events / Activities page)
+
+```html
+<!-- events.html
+     Events page with minimum 3 event cards aligned using Flexbox
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Events - Smart Minds Club</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Smart Minds Club</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Upcoming Events</h1>
+
+    <!-- Flex container for event cards (requirement: use Flexbox) -->
+    <section class="events-flex">
+      <!-- Event card 1 -->
+      <article class="event-card card-1">
+        <h2>Hackathon Sprint</h2>
+        <p>24-hour coding contest to build creative solutions. Teams of up to 4 participants.</p>
+      </article>
+
+      <!-- Event card 2 -->
+      <article class="event-card card-2">
+        <h2>Design Workshop</h2>
+        <p>Hands-on UI/UX session covering prototyping and user research basics.</p>
+      </article>
+
+      <!-- Event card 3 -->
+      <article class="event-card card-3">
+        <h2>Guest Talk: Industry Insights</h2>
+        <p>Talk by alumni working in tech startups about career paths and real projects.</p>
+      </article>
+
+      <!-- (Optional) More cards can be added here -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year-events"></span> Smart Minds Club</p>
+  </footer>
+
+  <script>document.getElementById('year-events').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+```
+
+---
+
+## `join.html` (Join Club Form page)
+
+```html
+<!-- join.html
+     Join form page: contains Name, Branch, Year, Email and Submit button
+     Form is purely front-end (no back-end). Use method="post" and action="#" as placeholder.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Join - Smart Minds Club</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Smart Minds Club</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Join the Club</h1>
+    <form class="join-form" method="post" action="#">
+      <!-- Name field -->
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <!-- Branch field -->
+      <label for="branch">Branch</label>
+      <input type="text" id="branch" name="branch" required>
+
+      <!-- Year field -->
+      <label for="year">Year</label>
+      <select id="year" name="year" required>
+        <option value="">-- Select --</option>
+        <option>1st Year</option>
+        <option>2nd Year</option>
+        <option>3rd Year</option>
+        <option>4th Year</option>
+      </select>
+
+      <!-- Email field -->
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year-join"></span> Smart Minds Club</p>
+  </footer>
+
+  <script>document.getElementById('year-join').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+```
+
+---
+
+## `css/styles.css`
+
+```css
+/* styles.css
+   Central stylesheet used by all pages. Includes float and flexbox usage.
+*/
+
+/* Basic reset */
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial, sans-serif}
+
+body{line-height:1.5;color:#222}
+.container{max-width:1000px;margin:20px auto;padding:0 16px}
+
+/* Header / nav - common on all pages */
+.site-header{background:#0b6fa4;color:#fff;padding:12px 16px;overflow:auto}
+.logo{float:left;font-weight:700;font-size:1.2rem}
+.main-nav{float:right}
+.main-nav ul{list-style:none}
+.main-nav li{display:inline;margin-left:16px}
+.main-nav a{color:#fff;text-decoration:none}
+
+/* Clearfix for header (so future elements flow correctly) */
+.site-header::after{content:"";display:block;clear:both}
+
+/* Hero section */
+.hero{display:flex;align-items:center;justify-content:space-between;background:#eef7fb;padding:24px;margin-top:12px}
+.hero-left{flex:1;padding-right:12px}
+.hero-right{flex:1}
+.hero-image{max-width:100%;height:auto;display:block;border-radius:6px}
+.btn{display:inline-block;padding:10px 14px;background:#0b6fa4;color:#fff;border-radius:6px;text-decoration:none;margin-top:8px}
+
+/* Float example in features section (left and right columns) */
+.features{margin:20px 0;padding:12px}
+.feature-left{float:left;width:48%}
+.feature-right{float:right;width:48%}
+.features::after{content:"";display:block;clear:both}
+
+/* Events section using Flexbox */
+.events-flex{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+.event-card{flex:1 1 250px;padding:16px;border:2px solid #ccc;border-radius:8px;min-height:120px}
+
+/* Individual background colors for cards (requirement: each card has background color) */
+.card-1{background:#fff7e6;border-color:#ffd580}
+.card-2{background:#e8f7ff;border-color:#91d5ff}
+.card-3{background:#f2ffe8;border-color:#b6f0a6}
+
+/* Join form styles */
+.join-form{max-width:480px;background:#f5f7fb;padding:16px;border-radius:8px}
+.join-form label{display:block;margin-top:8px;font-weight:600}
+.join-form input,.join-form select{width:100%;padding:8px;margin-top:6px;border:1px solid #ccc;border-radius:4px}
+.join-form .btn{border:none;cursor:pointer}
+
+/* Footer */
+.site-footer{text-align:center;padding:12px;margin-top:24px;background:#f1f1f1}
+
+/* Responsive: stack hero columns on smaller screens */
+@media (max-width:700px){
+  .hero{flex-direction:column}
+  .logo, .main-nav{float:none;text-align:center}
+  .main-nav li{display:inline-block;margin-left:8px}
+  .feature-left,.feature-right{width:100%;float:none}
+}
+```
+
+---
+
+## `README.md` (for GitHub repository)
+
+```md
+# Smart-Minds-Club Website
+
+This repository contains a simple multi-page website built using only HTML and CSS
+for the College Club Website assignment.
+
+## Files
+- `index.html` — Home page (includes float & hero)
+- `about.html` — About page with description and image
+- `events.html` — Events page (event cards aligned with Flexbox)
+- `join.html` — Join form page (Name, Branch, Year, Email)
+- `css/styles.css` — Single stylesheet applied to all pages
+- `assets/images/club-photo.jpg` — Replace this placeholder with a real image
+
+## How to run
+Open `index.html` in a browser. The navigation links are relative and will work locally.
+
+## Notes for submission
+1. Create a GitHub repository named `smart-minds-club` (or similar).
+2. Push all files and ensure `index.html` is at the repository root.
+3. Take screenshots of each page (Home, About, Events, Join) and include them in the PDF report.
+4. PDF report should contain: Student Name, Roll No, GitHub link, code screenshots and output screenshots.
+5. Submit the Google Form with your GitHub repo URL.
+
+Good luck!
+```
+
+---
+
+## PDF Submission checklist (for your report)
+
+* [ ] Cover page with your **Name** and **Roll No.**
+* [ ] Brief description of the project (1 paragraph)
+* [ ] Folder structure screenshot or listing
+* [ ] Code screenshot(s) for at least one HTML file and the CSS file
+* [ ] Output screenshots: Home, About, Events, Join pages
+* [ ] GitHub repository link (visible in the PDF)
+* [ ] Any comments explaining how you used `float` and `flexbox` in the project
+
+---
+
+If you want, I can also:
+
+* Create a ready-to-upload ZIP file containing all files (I can prepare the files here so you can download).
+* Generate the exact PDF layout for the report with placeholders for your Name and Roll No.
+
+<!-- End of document -->
